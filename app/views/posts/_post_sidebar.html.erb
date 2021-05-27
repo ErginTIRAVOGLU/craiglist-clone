@@ -1,0 +1,9 @@
+
+<%  if controller.controller_name == "posts" && controller.action_name == "list" %>
+    <p><strong><%= link_to @post.category.name, category_path(@post.category) %></strong></p>
+    <ul>
+        <% @post.category.subcategories.each do | subcategory| %>
+            <li><%= link_to subcategory.name, category_path(subcategory) %></li>                            
+        <% end %>
+    </ul>
+<% end%>
